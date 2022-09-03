@@ -1,6 +1,6 @@
 # ushop
 
-A new Flutter project.
+An flutter ecommerce project for a fully functional ecommerce app.
 
 ## Getting Started
 
