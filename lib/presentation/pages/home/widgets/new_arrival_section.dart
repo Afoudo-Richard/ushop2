@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:sizer/sizer.dart';
@@ -17,10 +18,10 @@ class NewArrivalsSection extends StatelessWidget {
         Padding(
           padding: pagePadding,
           child: SectionHeader(
-            title: "New Arrivals",
+            title: "new_arrivals".tr(),
             trailing: InkWell(
               child: Text(
-                "See All",
+                "see_all".tr(),
                 style: TextStyle(
                     fontSize: 9.sp,
                     fontWeight: FontWeight.w500,
@@ -32,25 +33,18 @@ class NewArrivalsSection extends StatelessWidget {
         SizedBox(
           height: 2.h,
         ),
-        SizedBox(
-          height: 37.h,
-          child: ListView.separated(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-            shrinkWrap: true,
-            scrollDirection: Axis.horizontal,
-            itemCount: listOfProducts.length,
-            itemBuilder: (BuildContext context, int index) {
-              return ProductItem(
-                product:
-                    listOfProducts[Random().nextInt(listOfProducts.length)],
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) {
-              return SizedBox(
-                width: 7.w,
-              );
-            },
-          ),
+        HorizontalProductsListing(
+          itemCount: listOfProducts.length,
+          itemBuilder: (BuildContext context, int index) {
+            return ProductItem(
+              product: listOfProducts[Random().nextInt(listOfProducts.length)],
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) {
+            return SizedBox(
+              width: 5.w,
+            );
+          },
         ),
       ],
     );

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/pages/search/views/search_page.dart';
@@ -13,7 +14,7 @@ class SearchInput extends StatelessWidget {
       child: GestureDetector(
         onTap: () => Navigator.push(context, SearchPage.route()),
         child: CustomInput(
-          inputHintText: "Search Product Name",
+          inputHintText: "search_product_name".tr(),
           trailing: const Icon(LineIcons.search),
           backgroundColor: contentBackgroundColor,
           inputEnabled: false,

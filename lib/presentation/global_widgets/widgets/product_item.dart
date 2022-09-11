@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:ushop/blocs/blocs.dart';
 import 'package:ushop/data/models/product.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
@@ -43,7 +44,7 @@ class ProductItem extends StatelessWidget {
             offset: Offset(0, 0),
           ),
         ],
-        width: 40.w,
+        width: 41.w,
         child: Stack(
           children: [
             Column(
@@ -67,7 +68,7 @@ class ProductItem extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: pagePadding,
+                  padding: EdgeInsets.symmetric(horizontal: 5.sp),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -124,7 +125,7 @@ class ProductItem extends StatelessWidget {
                                 width: 1.w,
                               ),
                               Text(
-                                "${product.total_reviews} Reviews",
+                                "${product.total_reviews} " + "reviews".tr(),
                                 style: TextStyle(
                                   fontSize: 9.sp,
                                   fontWeight: FontWeight.w400,

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/services.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/pages/register/views/enter_name_password_page_layout.dart';
@@ -27,7 +28,7 @@ class EnterVerificationCodePageLayout extends StatelessWidget {
                 ),
                 SizedBox(
                   child: Text(
-                    "Verification",
+                    "verification".tr(),
                     style: TextStyle(
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
@@ -40,7 +41,7 @@ class EnterVerificationCodePageLayout extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "We have sent the verification code to +628*******716",
+                      "verification_code_sent_to".tr() + " +628*******716",
                       style: TextStyle(
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w400,
@@ -51,9 +52,9 @@ class EnterVerificationCodePageLayout extends StatelessWidget {
                       width: 1.w,
                     ),
                     InkWell(
-                      onTap: () => Navigator.pop(context),
+                      onTap: () {},
                       child: Text(
-                        "Change?",
+                        "change".tr() + "?",
                         style: TextStyle(
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w400,
@@ -70,7 +71,7 @@ class EnterVerificationCodePageLayout extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Verification Code",
+                      "verification_code".tr(),
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
@@ -80,7 +81,7 @@ class EnterVerificationCodePageLayout extends StatelessWidget {
                     InkWell(
                       onTap: () => print("Re-sending code now"),
                       child: Text(
-                        "Re-send Code",
+                        "resend_code".tr(),
                         style: TextStyle(
                           color: primaryColor,
                           fontWeight: FontWeight.bold,
@@ -194,7 +195,7 @@ class EnterVerificationCodePageLayout extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Send code reload in",
+                      "send_code_reload_in".tr(),
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 10.sp,
@@ -217,7 +218,7 @@ class EnterVerificationCodePageLayout extends StatelessWidget {
                   width: double.infinity,
                   child: CustomButton(
                     child: Text(
-                      "Continue",
+                      "continue".tr(),
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 12.sp,

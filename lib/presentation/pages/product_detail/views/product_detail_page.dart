@@ -1,4 +1,5 @@
 import 'package:easy_image_viewer/easy_image_viewer.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:ushop/blocs/blocs.dart';
@@ -51,7 +52,7 @@ class ProductDetailPage extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         title: Text(
-          "Detail Product",
+          "product_detail".tr(),
           style: TextStyle(
             fontSize: 20.sp,
             color: Colors.black,
@@ -170,7 +171,7 @@ class ProductDetailPage extends StatelessWidget {
                               width: 2.w,
                             ),
                             Text(
-                              "${product.total_reviews} Reviews",
+                              "${product.total_reviews} " + "reviews".tr(),
                               style: TextStyle(
                                 fontSize: 11.sp,
                                 fontWeight: FontWeight.w400,
@@ -185,7 +186,8 @@ class ProductDetailPage extends StatelessWidget {
                           child: Row(
                             children: [
                               Text(
-                                "Available : ${product.total_available}",
+                                "available".tr() +
+                                    " : ${product.total_available}",
                                 style: TextStyle(
                                   color: Colors.green,
                                 ),
@@ -223,7 +225,7 @@ class ProductDetailPage extends StatelessWidget {
                       height: 2.h,
                     ),
                     Text(
-                      "Product Description",
+                      "product_description".tr(),
                       style: TextStyle(
                         fontSize: 13.sp,
                         fontWeight: FontWeight.w500,
@@ -297,7 +299,7 @@ class ProductDetailPage extends StatelessWidget {
                           },
                           backgroundColor: Colors.red,
                           child: Text(
-                            "Remove from cart",
+                            "remove_from_cart".tr(),
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 12.sp,
@@ -308,7 +310,7 @@ class ProductDetailPage extends StatelessWidget {
                     : Expanded(
                         child: CustomButton(
                           child: Text(
-                            "Add to cart",
+                            "add_to_cart".tr(),
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 12.sp,

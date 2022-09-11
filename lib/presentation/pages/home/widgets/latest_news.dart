@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:sizer/sizer.dart';
@@ -18,7 +19,7 @@ class LatestNewsSection extends StatelessWidget {
         Padding(
           padding: pagePadding,
           child: SectionHeader(
-            title: "Latest News",
+            title: "latest_news".tr(),
           ),
         ),
         SizedBox(
@@ -54,7 +55,7 @@ class LatestNewsSection extends StatelessWidget {
               backgroundColor: Colors.white,
               border: const BorderSide(),
               child: Text(
-                "See All News",
+                "see_all_news".tr(),
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 12.sp,

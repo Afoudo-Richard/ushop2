@@ -27,3 +27,4 @@ export 'widgets/seller_name.dart';
 export 'widgets/user_image/user_image.dart';
 export 'widgets/clear_cart_dialog.dart';
 export 'widgets/global_scaffold.dart';
+export './widgets/horizontal_products_listing.dart';

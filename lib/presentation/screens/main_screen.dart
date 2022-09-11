@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/pages/home/views/home_page.dart';
 import 'package:ushop/presentation/pages/more/views/more_page.dart';
@@ -55,7 +56,7 @@ class _MainScreenState extends State<MainScreen> {
           items: [
             _bottomNavItem(
               index: 0,
-              label: "HOME",
+              label: "home".tr(),
               icon: LineIcons.home,
               onTap: (int index) {
                 setState(() {
@@ -65,7 +66,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
             _bottomNavItem(
               index: 1,
-              label: "WISHLIST",
+              label: "wishlist".tr(),
               icon: LineIcons.heart,
               onTap: (int index) {
                 setState(() {
@@ -75,7 +76,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
             _bottomNavItem(
               index: 2,
-              label: "ORDER",
+              label: "order".tr(),
               icon: LineIcons.shoppingCart,
               onTap: (int index) {
                 setState(() {
@@ -85,7 +86,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
             _bottomNavItem(
               index: 3,
-              label: "More",
+              label: "more".tr(),
               icon: LineIcons.buffer,
               onTap: (int index) {
                 setState(() {

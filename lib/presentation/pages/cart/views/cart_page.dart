@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:ushop/blocs/blocs.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class CartPage extends StatelessWidget {
         elevation: 0.5,
         backgroundColor: Colors.white,
         title: Text(
-          "Cart",
+          "cart".tr(),
           style: TextStyle(
             fontSize: 20.sp,
             color: primaryColor,
@@ -120,7 +121,7 @@ class CartPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "Your cart is empty",
+                        "your_cart_is_empty".tr(),
                         style: TextStyle(
                             fontSize: 16.sp, fontWeight: FontWeight.w600),
                       ),

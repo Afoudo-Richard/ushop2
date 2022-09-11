@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:ushop/utils/utils.dart';
 
@@ -10,7 +11,7 @@ class LatestSearched extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Latest Searched",
+          "latest_search".tr(),
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 12.sp,

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:sizer/sizer.dart';
 import 'package:ushop/blocs/blocs.dart';
@@ -25,7 +26,7 @@ class WishListPage extends StatelessWidget {
         elevation: 0.5,
         backgroundColor: Colors.white,
         title: Text(
-          "Wishlist",
+          "wishlist".tr(),
           style: TextStyle(
             fontSize: 20.sp,
             color: primaryColor,
@@ -89,7 +90,7 @@ class WishListPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          "No product in your wishlist",
+                          "no_product_in_your_wishlist".tr(),
                           style: TextStyle(
                               fontSize: 16.sp, fontWeight: FontWeight.w600),
                         ),

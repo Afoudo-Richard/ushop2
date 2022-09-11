@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/screens/main_screen.dart';
 import 'package:ushop/utils/style.dart';
@@ -28,7 +29,7 @@ class EnterNamePasswordPageLayout extends StatelessWidget {
                 ),
                 SizedBox(
                   child: Text(
-                    "Profile & Password",
+                    "profile".tr() + " & " + "password".tr(),
                     style: TextStyle(
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
@@ -39,7 +40,7 @@ class EnterNamePasswordPageLayout extends StatelessWidget {
                   height: 3.h,
                 ),
                 Text(
-                  "Complete the following latest data to enter the Ushop Mall application",
+                  "complete_the_following".tr(args: ["Ushop"]),
                   style: TextStyle(
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w400,
@@ -50,8 +51,8 @@ class EnterNamePasswordPageLayout extends StatelessWidget {
                   height: 5.h,
                 ),
                 CustomInput(
-                  label: "Full Name",
-                  inputHintText: "Enter your full",
+                  label: "full_name".tr(),
+                  inputHintText: "enter_full_name".tr(),
                   backgroundColor: inputBackgroundColor,
                   labelTextStyle: TextStyle(
                     color: Colors.black,
@@ -61,9 +62,9 @@ class EnterNamePasswordPageLayout extends StatelessWidget {
                   height: 5.h,
                 ),
                 CustomInput(
-                  label: "Password",
+                  label: "password".tr(),
                   inputObscureText: true,
-                  inputHintText: "Enter Account Password",
+                  inputHintText: "enter_account_password",
                   backgroundColor: inputBackgroundColor,
                   labelTextStyle: TextStyle(
                     color: Colors.black,
@@ -77,21 +78,37 @@ class EnterNamePasswordPageLayout extends StatelessWidget {
                   height: 5.h,
                 ),
                 CustomInput(
-                  label: "Referal Code (Optional)",
-                  inputHintText: "Input your code",
+                  label: "confirm_password".tr(),
+                  inputObscureText: true,
+                  inputHintText: "confirm_password".tr(),
+                  backgroundColor: inputBackgroundColor,
+                  labelTextStyle: TextStyle(
+                    color: Colors.black,
+                  ),
+                  trailing: Icon(
+                    LineIcons.eye,
+                    size: 18.sp,
+                  ),
+                ),
+                SizedBox(
+                  height: 5.h,
+                ),
+                CustomInput(
+                  label: "referal_code".tr() + " (" + "optional".tr() + ")",
+                  inputHintText: "enter_code".tr(),
                   backgroundColor: inputBackgroundColor,
                   labelTextStyle: TextStyle(
                     color: Colors.black,
                   ),
                 ),
                 SizedBox(
-                  height: 10.h,
+                  height: 8.h,
                 ),
                 SizedBox(
                   width: double.infinity,
                   child: CustomButton(
                     child: Text(
-                      "Confirmation",
+                      "confirmation".tr(),
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 12.sp,

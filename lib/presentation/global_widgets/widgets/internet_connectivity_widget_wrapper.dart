@@ -2,6 +2,7 @@
 
 import 'package:connectivity_wrapper/connectivity_wrapper.dart';
 import 'package:connectivity_wrapper/src/utils/constants.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:provider/provider.dart';
@@ -67,7 +68,7 @@ class InternetConnectivityWidgetWrapper extends StatelessWidget {
         duration: const Duration(milliseconds: 500),
         child: Center(
           child: Text(
-            "${_isOffline ? disconnectedMessage ?? 'No connection' : connectedMessage ?? 'Back online'}",
+            "${_isOffline ? disconnectedMessage ?? 'no_connection'.tr() : connectedMessage ?? 'back_online'.tr()}",
             style: TextStyle(
               color: Colors.white,
               fontSize: 9.sp,

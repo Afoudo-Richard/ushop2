@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:ushop/presentation/pages/profile/widgets/user_info.dart';
@@ -32,7 +33,7 @@ class ProfilePage extends StatelessWidget {
         elevation: 0.5,
         backgroundColor: Colors.white,
         title: Text(
-          "Profile",
+          "profile".tr(),
           style: TextStyle(
             fontSize: 20.sp,
             color: primaryColor,
@@ -71,13 +72,13 @@ class ProfilePage extends StatelessWidget {
                         ),
                         ItemTile(
                           icon: LineIcons.edit,
-                          title: "Update profile",
+                          title: "update_profile".tr(),
                           onTap: () => Navigator.push(
                               context, ProfileUpdatePage.route()),
                         ),
-                        const ItemTile(
+                        ItemTile(
                           icon: LineIcons.trash,
-                          title: "Delete profile",
+                          title: "delete_profile".tr(),
                         ),
                         SizedBox(
                           height: 2.h,

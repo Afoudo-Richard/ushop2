@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:ushop/blocs/blocs.dart';
+import 'package:ushop/blocs/settings/bloc/settings_bloc.dart';
 import 'package:ushop/data/data_provider/nang_api.dart';
 import 'package:connectivity_wrapper/connectivity_wrapper.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
@@ -17,6 +19,7 @@ class App extends StatelessWidget {
       create: (context) => NangApi(),
       child: MultiBlocProvider(
         providers: [
+          BlocProvider(create: (context) => SettingsBloc()),
           BlocProvider(create: (context) => AuthenticationBloc()),
           BlocProvider(create: (context) => UserImageBloc()),
           BlocProvider(create: (context) => CartBloc()),
@@ -50,33 +53,45 @@ class _AppViewState extends State<AppView> {
     return Sizer(
       builder: (context, orientation, deviceType) {
         return ConnectivityAppWrapper(
-          app: MaterialApp(
-            debugShowCheckedModeBanner: false,
-            navigatorKey: _navigatorKey,
-            theme: appTheme(context),
-            builder: (context, child) {
-              return InternetConnectivityWidgetWrapper(
-                child: GlobalScaffold(
-                  child: BlocListener<AuthenticationBloc, AuthenticationState>(
-                    listener: (context, state) {
-                      Future.delayed(const Duration(seconds: 1), () {
-                        _navigator.pushAndRemoveUntil<void>(
-                          LoginPage.route(),
-                          (route) => false,
-                        );
-                      });
-                    },
-                    child: child,
-                  ),
-                ),
-              );
+          app: BlocBuilder<SettingsBloc, SettingsState>(
+            buildWhen: (previous, current) {
+              setState(() {});
+              return true;
             },
-            onGenerateRoute: (_) {
-              final state = context.read<AuthenticationBloc>().state;
-              context
-                  .read<AuthenticationBloc>()
-                  .add(AuthenticationChecker(check: !(state.checker)));
-              return SplashPage.route();
+            builder: (context, state) {
+              return MaterialApp(
+                locale: state.locale,
+                supportedLocales: context.supportedLocales,
+                localizationsDelegates: context.localizationDelegates,
+                debugShowCheckedModeBanner: false,
+                navigatorKey: _navigatorKey,
+                theme: appTheme(context),
+                builder: (context, child) {
+                  return InternetConnectivityWidgetWrapper(
+                    child: GlobalScaffold(
+                      child:
+                          BlocListener<AuthenticationBloc, AuthenticationState>(
+                        listener: (context, state) {
+                          Future.delayed(const Duration(seconds: 1), () {
+                            _navigator.pushAndRemoveUntil<void>(
+                              LoginPage.route(),
+                              (route) => false,
+                            );
+                          });
+                        },
+                        child: child,
+                      ),
+                    ),
+                  );
+                },
+                onGenerateRoute: (_) {
+                  final state = context.read<AuthenticationBloc>().state;
+                  context
+                      .read<AuthenticationBloc>()
+                      .add(AuthenticationChecker(check: !(state.checker)));
+                  return SplashPage.route();
+                },
+              );
             },
           ),
         );

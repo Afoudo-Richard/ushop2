@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:ushop/data/mock_data.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/utils/style.dart';
@@ -18,7 +19,7 @@ class AllReviews extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: SectionHeader(
-              title: "Reviews",
+              title: "reviews".tr(),
               trailing: InkWell(
                 onTap: () => Navigator.pop(context),
                 child: Icon(

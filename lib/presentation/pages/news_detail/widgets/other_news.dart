@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:ushop/data/mock_data.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
@@ -13,10 +14,10 @@ class OtherNewsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
+        Padding(
           padding: pagePadding,
           child: SectionHeader(
-            title: "Other news",
+            title: "other_news".tr(),
           ),
         ),
         SizedBox(
@@ -63,7 +64,7 @@ class OtherNewsSection extends StatelessWidget {
               backgroundColor: Colors.white,
               border: const BorderSide(),
               child: Text(
-                "See All News",
+                "see_all_news".tr(),
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 12.sp,

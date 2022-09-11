@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:sizer/sizer.dart';
@@ -16,7 +17,7 @@ class CategorySection extends StatelessWidget {
         Padding(
           padding: pagePadding,
           child: SectionHeader(
-            title: "Category",
+            title: "category".tr(),
             trailing: InkWell(
               onTap: () => showModalBottomSheet(
                 barrierColor: primaryColor.withOpacity(0.7),
@@ -27,7 +28,7 @@ class CategorySection extends StatelessWidget {
                 },
               ),
               child: Text(
-                "See All",
+                "see_all".tr(),
                 style: TextStyle(
                     fontSize: 9.sp,
                     fontWeight: FontWeight.w500,

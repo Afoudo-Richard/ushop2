@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:sizer/sizer.dart';
@@ -15,10 +16,10 @@ class FeaturedProductSection extends StatelessWidget {
         Padding(
           padding: pagePadding,
           child: SectionHeader(
-            title: "Feature Product",
+            title: "featured_product".tr(),
             trailing: InkWell(
               child: Text(
-                "See All",
+                "see_all".tr(),
                 style: TextStyle(
                     fontSize: 9.sp,
                     fontWeight: FontWeight.w500,
@@ -31,9 +32,9 @@ class FeaturedProductSection extends StatelessWidget {
           height: 2.h,
         ),
         SizedBox(
-          height: 37.h,
+          height: 35.h,
           child: ListView.separated(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
             itemCount: listOfProducts.length,
@@ -44,7 +45,7 @@ class FeaturedProductSection extends StatelessWidget {
             },
             separatorBuilder: (BuildContext context, int index) {
               return SizedBox(
-                width: 7.w,
+                width: 5.w,
               );
             },
           ),

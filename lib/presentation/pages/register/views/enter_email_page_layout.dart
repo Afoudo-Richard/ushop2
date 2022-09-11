@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/pages/login/views/login_page.dart';
 import 'package:ushop/presentation/pages/register/views/enter_verification_code_page_layout.dart';
@@ -22,7 +23,7 @@ class EnterEmailPageLayout extends StatelessWidget {
                 ),
                 SizedBox(
                   child: Text(
-                    "Register Account",
+                    "register_account".tr(),
                     style: TextStyle(
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
@@ -30,22 +31,11 @@ class EnterEmailPageLayout extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 3.h,
-                ),
-                Text(
-                  "Enter Email / No. Phone to register",
-                  style: TextStyle(
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.grey,
-                  ),
-                ),
-                SizedBox(
                   height: 5.h,
                 ),
                 CustomInput(
-                  label: "Email/Phone",
-                  inputHintText: "Enter your email address/ phone number",
+                  label: "email".tr(),
+                  inputHintText: "enter_email".tr(),
                   backgroundColor: inputBackgroundColor,
                   labelTextStyle: TextStyle(
                     color: Colors.black,
@@ -58,7 +48,7 @@ class EnterEmailPageLayout extends StatelessWidget {
                   width: double.infinity,
                   child: CustomButton(
                     child: Text(
-                      "Continue",
+                      "continue".tr(),
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 12.sp,
@@ -75,7 +65,7 @@ class EnterEmailPageLayout extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Have an Account?",
+                      "have_an_account?".tr(),
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 12.sp,
@@ -86,7 +76,7 @@ class EnterEmailPageLayout extends StatelessWidget {
                       onTap: () =>
                           Navigator.pushReplacement(context, LoginPage.route()),
                       child: Text(
-                        "Sign In",
+                        "sign_in".tr(),
                         style: TextStyle(
                           color: primaryColor,
                           fontSize: 12.sp,

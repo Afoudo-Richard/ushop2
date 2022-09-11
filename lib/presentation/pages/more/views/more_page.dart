@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:flutter/material.dart';
@@ -78,47 +79,47 @@ class MorePage extends StatelessWidget {
                         ),
                         ItemTile(
                           icon: LineIcons.user,
-                          title: "Profile",
+                          title: "profile".tr(),
                           onTap: () =>
                               Navigator.push(context, ProfilePage.route()),
                         ),
-                        const ItemTile(
+                        ItemTile(
                           icon: LineIcons.addressBook,
-                          title: "Address",
+                          title: "address".tr(),
                         ),
-                        const ItemTile(
+                        ItemTile(
                           icon: LineIcons.bell,
-                          title: "Notification",
+                          title: "notification".tr(),
                         ),
                         ItemTile(
                           icon: LineIcons.cog,
-                          title: "Setting",
+                          title: "settings".tr(),
                           onTap: () =>
                               Navigator.push(context, SettingsPage.route()),
                         ),
-                        const ItemTile(
+                        ItemTile(
                           icon: LineIcons.scroll,
-                          title: "Terms & Condition",
+                          title: "terms&condition".tr(),
                         ),
-                        const ItemTile(
+                        ItemTile(
                           icon: LineIcons.userShield,
-                          title: "Privacy Policy",
+                          title: "privacy_policy".tr(),
                         ),
-                        const ItemTile(
+                        ItemTile(
                           icon: LineIcons.users,
-                          title: "About Us",
+                          title: "about_us".tr(),
                         ),
-                        const ItemTile(
+                        ItemTile(
                           icon: LineIcons.headset,
-                          title: "Contact Us",
+                          title: "contact_us".tr(),
                         ),
-                        const ItemTile(
+                        ItemTile(
                           icon: LineIcons.mobilePhone,
-                          title: "App Info",
+                          title: "app_info".tr(),
                         ),
-                        const ItemTile(
+                        ItemTile(
                           icon: LineIcons.alternateSignOut,
-                          title: "Sign out",
+                          title: "sign_out".tr(),
                         ),
                         SizedBox(
                           height: 4.h,

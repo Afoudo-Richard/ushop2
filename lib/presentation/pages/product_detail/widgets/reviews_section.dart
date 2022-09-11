@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import "package:flutter/material.dart";
 import 'package:ushop/data/mock_data.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
@@ -15,7 +16,7 @@ class ReviewsSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Review (86)",
+              "reviews".tr() + " (86)",
               style: TextStyle(
                 fontSize: 13.sp,
                 fontWeight: FontWeight.w500,
@@ -77,7 +78,7 @@ class ReviewsSection extends StatelessWidget {
             backgroundColor: Colors.white,
             border: const BorderSide(),
             child: Text(
-              "See All Reviews",
+              "see_all_reviews".tr(),
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 12.sp,
