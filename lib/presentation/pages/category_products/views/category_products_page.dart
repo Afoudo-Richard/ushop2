@@ -1,10 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:ushop/data/mock_data.dart';
+import 'package:ushop/data/src/mock_data.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/pages/category_products/widgets/category_search_input.dart';
-import 'package:ushop/presentation/pages/search/views/search_page_layout.dart';
 import 'package:ushop/utils/utils.dart';
 
 class CategoryProductsPage extends StatelessWidget {
@@ -44,7 +43,7 @@ class CategoryProductsPage extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        actions: [
+        actions: const [
           CartButton(),
         ],
       ),

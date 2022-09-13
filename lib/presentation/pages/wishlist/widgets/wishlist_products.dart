@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ushop/blocs/blocs.dart';
-import 'package:ushop/data/mock_data.dart';
+import 'package:ushop/data/src/mock_data.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/utils/utils.dart';
 

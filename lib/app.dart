@@ -1,8 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:ushop/blocs/blocs.dart';
-import 'package:ushop/blocs/settings/bloc/settings_bloc.dart';
-import 'package:ushop/data/data_provider/nang_api.dart';
 import 'package:connectivity_wrapper/connectivity_wrapper.dart';
+import 'package:ushop/data/data.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/pages/login/views/login_page.dart';
 import 'package:ushop/presentation/pages/splash/view/splash_page.dart';

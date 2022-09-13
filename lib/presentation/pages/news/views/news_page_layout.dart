@@ -1,4 +1,4 @@
-import 'package:ushop/data/mock_data.dart';
+import 'package:ushop/data/src/mock_data.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/pages/news/views/widgets/news_search.dart';
 import 'package:ushop/presentation/pages/news_detail/views/news_details_page.dart';

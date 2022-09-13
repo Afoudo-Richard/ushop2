@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:ushop/data/models/news.dart';
+import 'package:ushop/data/src/models/models.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/pages/news_detail/views/news_details_page.dart';
 import 'package:ushop/utils/style.dart';

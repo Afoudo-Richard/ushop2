@@ -1,5 +1,5 @@
 import 'package:line_icons/line_icons.dart';
-import 'package:ushop/data/models/models.dart';
+import 'package:ushop/data/src/models/models.dart';
 
 List<User> listOfUsers = [
   User(

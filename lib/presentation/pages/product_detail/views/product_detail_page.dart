@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:ushop/blocs/blocs.dart';
 
-import 'package:ushop/data/mock_data.dart';
-import 'package:ushop/data/models/models.dart';
+import 'package:ushop/data/src/mock_data.dart';
+import 'package:ushop/data/src/models/models.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/pages/product_detail/widgets/reviews_section.dart';
 import 'package:ushop/presentation/pages/seller_info/views/seller_info_page.dart';

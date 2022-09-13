@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:ushop/blocs/blocs.dart';
-import 'package:ushop/data/models/models.dart';
+import 'package:ushop/data/src/models/models.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/utils/utils.dart';
 
-class ClearCartDialog extends StatelessWidget {
-  const ClearCartDialog({
-    Key? key,
-  }) : super(key: key);
+class RemoveCartItemDialog extends StatelessWidget {
+  const RemoveCartItemDialog({Key? key, required this.product})
+      : super(key: key);
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(15),
         ),
@@ -27,8 +28,8 @@ class ClearCartDialog extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
+                const Padding(
+                  padding: EdgeInsets.symmetric(
                     horizontal: 20,
                   ),
                   child: DialogHeader(
@@ -43,7 +44,7 @@ class ClearCartDialog extends StatelessWidget {
                     children: [
                       InkWell(
                         child: Text(
-                          "Are you sure you want to clear your cart?",
+                          "Are you sure you want to remove from cart?",
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 12.sp,
@@ -58,13 +59,13 @@ class ClearCartDialog extends StatelessWidget {
                         child: CustomButton(
                           onPressed: () {
                             BlocProvider.of<CartBloc>(context).add(
-                              EntireCartCleared(),
+                              EntireCartProductRemoved(product: product),
                             );
                             Navigator.pop(context);
                           },
                           backgroundColor: Colors.red,
                           child: Text(
-                            "Clear cart",
+                            "Remove from cart",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 12.sp,

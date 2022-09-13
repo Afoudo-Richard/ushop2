@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:ushop/blocs/blocs.dart';
-import 'package:ushop/data/models/models.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/utils/utils.dart';
 
-class RemoveCartItemDialog extends StatelessWidget {
-  const RemoveCartItemDialog({Key? key, required this.product})
-      : super(key: key);
-
-  final Product product;
+class ClearCartDialog extends StatelessWidget {
+  const ClearCartDialog({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(15),
         ),
@@ -28,15 +26,15 @@ class RemoveCartItemDialog extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
+                const Padding(
+                  padding: EdgeInsets.symmetric(
                     horizontal: 20,
                   ),
                   child: DialogHeader(
                     title: "Remove from cart",
                   ),
                 ),
-                Divider(),
+                const Divider(),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
@@ -44,7 +42,7 @@ class RemoveCartItemDialog extends StatelessWidget {
                     children: [
                       InkWell(
                         child: Text(
-                          "Are you sure you want to remove from cart?",
+                          "Are you sure you want to clear your cart?",
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 12.sp,
@@ -59,13 +57,13 @@ class RemoveCartItemDialog extends StatelessWidget {
                         child: CustomButton(
                           onPressed: () {
                             BlocProvider.of<CartBloc>(context).add(
-                              EntireCartProductRemoved(product: product),
+                              EntireCartCleared(),
                             );
                             Navigator.pop(context);
                           },
                           backgroundColor: Colors.red,
                           child: Text(
-                            "Remove from cart",
+                            "Clear cart",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 12.sp,

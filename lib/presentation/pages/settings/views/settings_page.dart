@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:ushop/blocs/settings/bloc/settings_bloc.dart';
+import 'package:ushop/blocs/blocs.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:ushop/utils/utils.dart';
@@ -27,7 +27,7 @@ class _SettingsPageState extends State<SettingsPage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: InkWell(
-          child: Icon(
+          child: const Icon(
             LineIcons.angleLeft,
             color: Colors.black,
           ),
@@ -59,7 +59,7 @@ class _SettingsPageState extends State<SettingsPage> {
               Text(context.locale.languageCode),
               CustomButton(
                 onPressed: () {
-                  context.setLocale(Locale('fr', 'FR'));
+                  context.setLocale(const Locale('fr', 'FR'));
                 },
                 child: Text(
                     "change local: (current ${context.locale.toString()})"),

@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:ushop/data/mock_data.dart';
+import 'package:ushop/data/src/mock_data.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/pages/news/views/news_page.dart';
 import 'package:ushop/utils/utils.dart';

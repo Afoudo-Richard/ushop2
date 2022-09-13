@@ -2,8 +2,7 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
-
-import 'package:ushop/data/models/product.dart';
+import 'package:ushop/data/src/models/product.dart';
 
 class WishList extends Equatable {
   final List<Product> products;

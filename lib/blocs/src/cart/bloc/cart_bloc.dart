@@ -1,9 +1,8 @@
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
 import 'package:equatable/equatable.dart';
-import 'package:ushop/data/models/models.dart';
+import 'package:ushop/data/src/models/models.dart';
 
 part 'cart_event.dart';
 part 'cart_state.dart';

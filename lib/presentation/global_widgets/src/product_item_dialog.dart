@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:formz/formz.dart';
 import 'package:ushop/blocs/blocs.dart';
-import 'package:ushop/data/models/product.dart';
+import 'package:ushop/data/src/models/models.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/utils/utils.dart';
 
-class CartItemDialog extends StatelessWidget {
-  const CartItemDialog({
+class ProductItemDialog extends StatelessWidget {
+  const ProductItemDialog({
     Key? key,
     required this.product,
   }) : super(key: key);
@@ -57,26 +57,38 @@ class CartItemDialog extends StatelessWidget {
                       SizedBox(
                         height: 2.h,
                       ),
-                      InkWell(
-                        child: Text(
-                          "Go to product",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 12.sp,
-                          ),
-                        ),
-                      ),
-                      Divider(
-                        height: 4.h,
-                      ),
-                      InkWell(
-                        child: Text(
-                          "Add to Wishlist",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 12.sp,
-                          ),
-                        ),
+                      BlocBuilder<WishListBloc, WishListState>(
+                        builder: (context, state) {
+                          return !state.wishList.productInWishList(product)
+                              ? InkWell(
+                                  onTap: () {
+                                    BlocProvider.of<WishListBloc>(context).add(
+                                      WishListProductAdded(product: product),
+                                    );
+                                  },
+                                  child: Text(
+                                    "Add to Wishlist",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12.sp,
+                                    ),
+                                  ),
+                                )
+                              : InkWell(
+                                  onTap: () {
+                                    BlocProvider.of<WishListBloc>(context).add(
+                                      WishListProductRemoved(product: product),
+                                    );
+                                  },
+                                  child: Text(
+                                    "Remove from Wishlist",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12.sp,
+                                    ),
+                                  ),
+                                );
+                        },
                       ),
                       Divider(
                         height: 4.h,
@@ -123,14 +135,12 @@ class CartItemDialog extends StatelessWidget {
                                   width: 100.w,
                                   child: CustomButton(
                                     onPressed: () {
-                                      showDialog(
-                                        context: context,
-                                        builder: (BuildContext context) {
-                                          return AddToCartDialog(
-                                            product: product,
-                                          );
-                                        },
+                                      BlocProvider.of<CartBloc>(context).add(
+                                        CartProductAdded(
+                                          product: product,
+                                        ),
                                       );
+                                      Navigator.pop(context);
                                     },
                                     child: Text(
                                       "Add to Cart",

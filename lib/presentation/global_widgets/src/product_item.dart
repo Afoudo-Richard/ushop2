@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:ushop/blocs/blocs.dart';
-import 'package:ushop/data/models/product.dart';
+import 'package:ushop/data/src/models/models.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/pages/product_detail/views/product_detail_page.dart';
 import 'package:ushop/utils/style.dart';

@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:ushop/data/models/news.dart';
+import 'package:ushop/data/src/models/models.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/pages/news_detail/widgets/other_news.dart';
 import 'package:ushop/utils/utils.dart';

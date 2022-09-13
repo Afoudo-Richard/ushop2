@@ -1,19 +1,16 @@
-import 'dart:async';
 import 'dart:convert';
 
 // import 'package:authentication_repository/authentication_repository.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:ushop/data/models/user.dart';
+import 'package:ushop/data/src/models/models.dart';
 
 part 'authentication_event.dart';
 part 'authentication_state.dart';
 
 class AuthenticationBloc
     extends HydratedBloc<AuthenticationEvent, AuthenticationState> {
-  AuthenticationBloc() : super(AuthenticationState()) {
+  AuthenticationBloc() : super(const AuthenticationState()) {
     on<AuthenticationChanged>(_onAuthenticationChanged);
     on<AuthenticationLogoutRequested>(_onAuthenticationLogoutRequested);
     on<AuthenticationChecker>(_onAuthenticationChecker);

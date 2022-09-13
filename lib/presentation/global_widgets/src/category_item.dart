@@ -1,6 +1,5 @@
 import 'dart:math';
-
-import 'package:ushop/data/models/category.dart';
+import 'package:ushop/data/src/models/models.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
 import 'package:ushop/presentation/pages/category_products/views/category_products_page.dart';
 

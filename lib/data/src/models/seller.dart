@@ -1,5 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:ushop/data/models/product.dart';
+import 'package:ushop/data/src/models/product.dart';
 
 class Seller {
   final String shop_logo_image;

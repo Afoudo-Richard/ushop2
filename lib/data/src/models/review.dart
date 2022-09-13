@@ -1,5 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:ushop/data/models/user.dart';
+import 'package:ushop/data/src/models/user.dart';
 
 class Review {
   final User user;
