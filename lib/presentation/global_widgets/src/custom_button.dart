@@ -22,19 +22,21 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: onPressed,
-        style: ButtonStyle(
-            padding: MaterialStateProperty.all(
-              padding,
+      onPressed: onPressed,
+      style: ButtonStyle(
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          padding: MaterialStateProperty.all(
+            padding,
+          ),
+          side: MaterialStateProperty.all(border),
+          backgroundColor:
+              MaterialStateProperty.all(backgroundColor ?? primaryColor),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: borderRadius ?? BorderRadius.circular(10),
             ),
-            side: MaterialStateProperty.all(border),
-            backgroundColor:
-                MaterialStateProperty.all(backgroundColor ?? primaryColor),
-            shape: MaterialStateProperty.all(
-              RoundedRectangleBorder(
-                borderRadius: borderRadius ?? BorderRadius.circular(10),
-              ),
-            )),
-        child: child);
+          )),
+      child: child,
+    );
   }
 }

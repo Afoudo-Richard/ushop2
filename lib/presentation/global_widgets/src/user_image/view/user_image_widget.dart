@@ -51,6 +51,7 @@ class UserImageWidget extends StatelessWidget {
                         image: FileImage(
                           File(state.pickedFile!.path),
                         ),
+                        fit: BoxFit.cover,
                       )
                     : CachedNetworkImage(
                         fit: BoxFit.cover,

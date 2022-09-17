@@ -3,8 +3,7 @@ import 'dart:convert';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:equatable/equatable.dart';
-import 'package:ushop/data/src/models/models.dart';
-import 'package:ushop/data/src/models/wishlist.dart';
+import 'package:ushop/data/data.dart';
 
 part 'wishlist_event.dart';
 part 'wishlist_state.dart';

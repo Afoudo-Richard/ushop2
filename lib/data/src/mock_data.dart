@@ -105,6 +105,7 @@ List<Seller> listOfSellers = [
     isApproved: true,
     location: "South Africa, Cape Town",
     followers: 23,
+    phone: "+237672367030",
     products: [
       Product(
         id: 1,
@@ -118,6 +119,8 @@ List<Seller> listOfSellers = [
         total_reviews: 86,
         total_available: 250,
         isLiked: true,
+        location: "Washighton DC",
+        itemState: "Brand New",
       ),
       Product(
         id: 2,
@@ -131,6 +134,8 @@ List<Seller> listOfSellers = [
         total_reviews: 86,
         total_available: 8,
         isLiked: false,
+        location: "Washighton DC",
+        itemState: "Used",
       ),
       Product(
         id: 3,
@@ -144,6 +149,8 @@ List<Seller> listOfSellers = [
         total_reviews: 6,
         total_available: 67,
         isLiked: false,
+        location: "Washighton DC",
+        itemState: "Brand New",
       ),
       Product(
         id: 4,
@@ -157,6 +164,8 @@ List<Seller> listOfSellers = [
         total_reviews: 10,
         total_available: 1,
         isLiked: false,
+        location: "Washighton DC",
+        itemState: "Brand New",
       ),
       Product(
         id: 5,
@@ -170,6 +179,8 @@ List<Seller> listOfSellers = [
         total_reviews: 10,
         total_available: 40,
         isLiked: true,
+        location: "Washighton DC",
+        itemState: "Brand New",
       ),
       Product(
         id: 6,
@@ -183,6 +194,8 @@ List<Seller> listOfSellers = [
         total_reviews: 30,
         total_available: 5,
         isLiked: true,
+        location: "Washighton DC",
+        itemState: "Brand New",
       ),
     ],
     date_joined: "20, Oct 2021",

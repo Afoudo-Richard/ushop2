@@ -2,7 +2,7 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
-import 'package:ushop/data/src/models/product.dart';
+import 'package:ushop/data/src/models/models.dart';
 
 class Cart extends Equatable {
   final List<Product> products;

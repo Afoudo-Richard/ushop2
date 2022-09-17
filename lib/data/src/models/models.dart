@@ -1,8 +1,8 @@
-export 'user.dart';
-export 'news.dart';
-export 'product.dart';
-export 'seller.dart';
-export 'review.dart';
-export 'category.dart';
-export 'cart.dart';
-export 'wishlist.dart';
+export './src/user.dart';
+export './src/news.dart';
+export './src/product.dart';
+export './src/seller.dart';
+export './src/review.dart';
+export './src/category.dart';
+export './src/cart.dart';
+export './src/wishlist.dart';

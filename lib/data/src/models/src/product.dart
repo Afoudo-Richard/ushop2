@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
@@ -12,6 +13,8 @@ class Product extends Equatable {
   final int total_reviews;
   final int total_available;
   final bool isLiked;
+  final String location;
+  final String itemState;
 
   Product({
     required this.id,
@@ -23,6 +26,8 @@ class Product extends Equatable {
     required this.total_reviews,
     required this.total_available,
     required this.isLiked,
+    required this.location,
+    required this.itemState,
   });
 
   Map<String, dynamic> toMap() {
@@ -36,6 +41,8 @@ class Product extends Equatable {
       'total_reviews': total_reviews,
       'total_available': total_available,
       'isLiked': isLiked,
+      'location': location,
+      'itemState': itemState,
     };
   }
 
@@ -50,6 +57,8 @@ class Product extends Equatable {
       total_reviews: map['total_reviews'] as int,
       total_available: map['total_available'] as int,
       isLiked: map['isLiked'] as bool,
+      location: map['location'] as String,
+      itemState: map['itemState'] as String,
     );
   }
 

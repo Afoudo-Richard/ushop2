@@ -1,4 +1,4 @@
-import 'package:ushop/data/src/models/product.dart';
+import 'package:ushop/data/src/models/src/product.dart';
 
 class Seller {
   final String shop_logo_image;
@@ -8,6 +8,7 @@ class Seller {
   final int followers;
   final List<Product> products;
   final String date_joined;
+  final String phone;
   Seller({
     required this.shop_logo_image,
     required this.name,
@@ -16,5 +17,6 @@ class Seller {
     required this.followers,
     required this.products,
     required this.date_joined,
+    required this.phone,
   });
 }

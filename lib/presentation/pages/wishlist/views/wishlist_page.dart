@@ -9,10 +9,12 @@ import 'package:ushop/presentation/pages/wishlist/widgets/wishlist_products.dart
 import 'package:ushop/utils/utils.dart';
 
 class WishListPage extends StatelessWidget {
+  const WishListPage({super.key});
+
   static Route route() {
     return MaterialPageRoute<void>(
-      builder: (_) => WishListPage(),
-      settings: RouteSettings(name: "WishListPage"),
+      builder: (_) => const WishListPage(),
+      settings: const RouteSettings(name: "WishListPage"),
     );
   }
 
@@ -21,27 +23,10 @@ class WishListPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       drawer: const AppDrawer(),
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        elevation: 0.5,
-        backgroundColor: Colors.white,
-        title: Text(
-          "wishlist".tr(),
-          style: TextStyle(
-            fontSize: 20.sp,
-            color: primaryColor,
-          ),
-        ),
-        centerTitle: true,
+      appBar: appBar(
+        title: "WishList",
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              LineIcons.bell,
-              color: secondaryColor,
-            ),
-          ),
-          CartButton(),
+          const CartButton(),
         ],
       ),
       body: SafeArea(

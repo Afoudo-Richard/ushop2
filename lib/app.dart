@@ -19,10 +19,12 @@ class App extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(create: (context) => SettingsBloc()),
+          BlocProvider(create: (context) => AppBottomNavigationBarBloc()),
           BlocProvider(create: (context) => AuthenticationBloc()),
           BlocProvider(create: (context) => UserImageBloc()),
           BlocProvider(create: (context) => CartBloc()),
           BlocProvider(create: (context) => WishListBloc()),
+          BlocProvider(create: (context) => LoginBloc()),
         ],
         child: const AppView(),
       ),

@@ -1,4 +1,4 @@
-import 'package:ushop/data/src/models/user.dart';
+import 'package:ushop/data/src/models/src/user.dart';
 
 class Review {
   final User user;

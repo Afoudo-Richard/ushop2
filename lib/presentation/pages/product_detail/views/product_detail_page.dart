@@ -7,6 +7,7 @@ import 'package:ushop/blocs/blocs.dart';
 import 'package:ushop/data/src/mock_data.dart';
 import 'package:ushop/data/src/models/models.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
+import 'package:ushop/presentation/pages/image_preview/views/image_preview_page.dart';
 import 'package:ushop/presentation/pages/product_detail/widgets/reviews_section.dart';
 import 'package:ushop/presentation/pages/seller_info/views/seller_info_page.dart';
 
@@ -88,19 +89,71 @@ class ProductDetailPage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        showImageViewerPager(
-                          context,
-                          multiImageProvider,
-                          onPageChanged: (page) {
-                            print("page changed to $page");
-                          },
-                          onViewerDismissed: (page) {
-                            print("dismissed while on page $page");
-                          },
-                          backgroundColor: primaryColor.withOpacity(0.4),
-                          closeButtonColor: Colors.white,
-                          swipeDismissible: true,
-                        );
+                        // showImageViewerPager(
+                        //   context,
+                        //   multiImageProvider,
+                        //   onPageChanged: (page) {
+                        //     print("page changed to $page");
+                        //   },
+                        //   onViewerDismissed: (page) {
+                        //     print("dismissed while on page $page");
+                        //   },
+                        //   backgroundColor: primaryColor.withOpacity(0.4),
+                        //   closeButtonColor: Colors.white,
+                        //   swipeDismissible: true,
+                        // );
+
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ImagePreviewPage(
+                                      images: [
+                                        CachedNetworkImage(
+                                          fit: BoxFit.contain,
+                                          placeholder: (context, url) =>
+                                              const Center(
+                                            child: CircularProgressIndicator(
+                                              backgroundColor: primaryColor,
+                                              color: secondaryColor,
+                                            ),
+                                          ),
+                                          imageUrl: product.image,
+                                        ),
+                                        CachedNetworkImage(
+                                          fit: BoxFit.contain,
+                                          placeholder: (context, url) =>
+                                              const Center(
+                                            child: CircularProgressIndicator(
+                                              backgroundColor: primaryColor,
+                                              color: secondaryColor,
+                                            ),
+                                          ),
+                                          imageUrl: product.image,
+                                        ),
+                                        CachedNetworkImage(
+                                          fit: BoxFit.contain,
+                                          placeholder: (context, url) =>
+                                              const Center(
+                                            child: CircularProgressIndicator(
+                                              backgroundColor: primaryColor,
+                                              color: secondaryColor,
+                                            ),
+                                          ),
+                                          imageUrl: product.image,
+                                        ),
+                                        CachedNetworkImage(
+                                          fit: BoxFit.contain,
+                                          placeholder: (context, url) =>
+                                              const Center(
+                                            child: CircularProgressIndicator(
+                                              backgroundColor: primaryColor,
+                                              color: secondaryColor,
+                                            ),
+                                          ),
+                                          imageUrl: product.image,
+                                        ),
+                                      ],
+                                    )));
                       },
                       child: CustomContainer(
                         padding: EdgeInsets.zero,
@@ -280,58 +333,12 @@ class ProductDetailPage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BlocBuilder<CartBloc, CartState>(
-        builder: (context, state) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: paddingSize,
-              vertical: 8,
-            ),
-            child: Row(
-              children: [
-                state.cart.productInCart(product)
-                    ? Expanded(
-                        child: CustomButton(
-                          onPressed: () {
-                            BlocProvider.of<CartBloc>(context).add(
-                              CartProductRemoved(product: product),
-                            );
-                          },
-                          backgroundColor: Colors.red,
-                          child: Text(
-                            "remove_from_cart".tr(),
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12.sp,
-                            ),
-                          ),
-                        ),
-                      )
-                    : Expanded(
-                        child: CustomButton(
-                          child: Text(
-                            "add_to_cart".tr(),
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12.sp,
-                            ),
-                          ),
-                          onPressed: () {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AddToCartDialog(
-                                  product: product,
-                                );
-                              },
-                            );
-                          },
-                        ),
-                      ),
-              ],
-            ),
-          );
-        },
+      bottomNavigationBar: const Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: paddingSize,
+          vertical: 8,
+        ),
+        child: CallButton(),
       ),
     );
   }

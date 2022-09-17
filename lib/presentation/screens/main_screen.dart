@@ -1,7 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:ushop/blocs/blocs.dart';
 import 'package:ushop/presentation/global_widgets/global_widgets.dart';
+import 'package:ushop/presentation/global_widgets/src/main_botton_navigation_bar.dart';
 import 'package:ushop/presentation/pages/home/views/home_page.dart';
 import 'package:ushop/presentation/pages/more/views/more_page.dart';
+import 'package:ushop/presentation/pages/sell/views/sell_page.dart';
 import 'package:ushop/presentation/pages/wishlist/views/wishlist_page.dart';
 import 'package:flutter/material.dart';
 import 'package:ushop/utils/utils.dart';
@@ -25,79 +28,19 @@ class _MainScreenState extends State<MainScreen> {
     final _kTabPages = <Widget>[
       HomePage(),
       WishListPage(),
+      SellPage(),
       HomePage(),
       const MorePage(),
     ];
     return Scaffold(
-      drawer: const AppDrawer(),
-      body: _kTabPages[_currentPage],
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black12,
-              blurRadius: 16,
-              spreadRadius: 0,
-              offset: Offset(0, -8),
-            ),
-          ],
+        drawer: const AppDrawer(),
+        body: BlocBuilder<AppBottomNavigationBarBloc,
+            AppBottomNavigationBarState>(
+          builder: (context, state) {
+            return state.activePage;
+          },
         ),
-        child: BottomNavigationBar(
-          elevation: 8.0,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: primaryColor,
-          showUnselectedLabels: false,
-          showSelectedLabels: false,
-          selectedLabelStyle: const TextStyle(
-            fontSize: 10,
-          ),
-          backgroundColor: Colors.white,
-          currentIndex: _currentPage,
-          items: [
-            _bottomNavItem(
-              index: 0,
-              label: "home".tr(),
-              icon: LineIcons.home,
-              onTap: (int index) {
-                setState(() {
-                  _currentPage = index;
-                });
-              },
-            ),
-            _bottomNavItem(
-              index: 1,
-              label: "wishlist".tr(),
-              icon: LineIcons.heart,
-              onTap: (int index) {
-                setState(() {
-                  _currentPage = index;
-                });
-              },
-            ),
-            _bottomNavItem(
-              index: 2,
-              label: "order".tr(),
-              icon: LineIcons.shoppingCart,
-              onTap: (int index) {
-                setState(() {
-                  _currentPage = index;
-                });
-              },
-            ),
-            _bottomNavItem(
-              index: 3,
-              label: "more".tr(),
-              icon: LineIcons.buffer,
-              onTap: (int index) {
-                setState(() {
-                  _currentPage = index;
-                });
-              },
-            ),
-          ],
-        ),
-      ),
-    );
+        bottomNavigationBar: const MainBottonNavigationBar());
   }
 
   BottomNavigationBarItem _bottomNavItem({

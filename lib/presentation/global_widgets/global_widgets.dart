@@ -28,3 +28,6 @@ export 'src/user_image/user_image.dart';
 export 'src/clear_cart_dialog.dart';
 export 'src/global_scaffold.dart';
 export 'src/horizontal_products_listing.dart';
+export './src/product_item2.dart';
+export './src/call_button.dart';
+export './src/app_bar.dart';
